@@ -24,8 +24,6 @@ getUrl = async()=>{
         console.log('error al conectar ngrok', error)
     }
 }
-//
-await getUrl()
 
 app.get('/start', async(req, res) => {
     try {
