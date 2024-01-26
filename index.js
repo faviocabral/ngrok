@@ -13,7 +13,8 @@ app.get('/', (req, res) => {
 getUrl = async()=>{
     try {
         // Get your endpoint online
-        await ngrok.connect({ addr: 3000, authtoken: process.env.AUTH_TOKEN })
+        //para poner garantia en link externo...
+        await ngrok.connect({ addr: 3010, authtoken: process.env.AUTH_TOKEN })
         .then(listener =>{
             console.log(`Ingress established at: ${listener.url()}`)
             URL = listener.url()
@@ -23,6 +24,8 @@ getUrl = async()=>{
         console.log('error al conectar ngrok', error)
     }
 }
+//
+await getUrl()
 
 app.get('/start', async(req, res) => {
     try {
